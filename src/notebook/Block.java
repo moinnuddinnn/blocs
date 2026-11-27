@@ -50,7 +50,6 @@ record Block(int height, long timeMillis, String parent, String note, long nonce
         }
     }
 
-    // ByteBuffer defaults to big-endian. The last eight bytes are reserved for the nonce.
     private static ByteBuffer header(int difficulty, int height, long timeMillis, String parent, String note) {
         byte[] text = note.getBytes(StandardCharsets.UTF_8);
         ByteBuffer bytes = ByteBuffer.allocate(4 + 1 + 4 + 8 + 32 + 4 + text.length + 8);
