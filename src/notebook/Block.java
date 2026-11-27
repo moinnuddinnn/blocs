@@ -7,7 +7,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HexFormat;
 import java.util.regex.Pattern;
 
-/** One immutable entry. A note is stored in clear text and committed to by the hash. */
 record Block(int height, long timeMillis, String parent, String note, long nonce, String hash) {
     static final String ROOT_PARENT = "0".repeat(64);
     static final String GENESIS_NOTE = "NotebookChain genesis";
